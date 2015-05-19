@@ -10,6 +10,8 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
 @end
 
 @implementation ViewController
@@ -17,6 +19,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    UIImage *image = [UIImage imageNamed:@"Lighthouse-in-Field.jpg"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    
+    [self.scrollView addSubview:imageView];
+    
+    self.scrollView.contentSize = image.size;
 }
 
 - (void)didReceiveMemoryWarning {
